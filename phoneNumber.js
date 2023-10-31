@@ -23,7 +23,6 @@ function testPhoneNumber(phoneNumber) {
     return false;
   }
   
-
 // Explanation of RegExp
 // ^      start of line
 // \(     optional start parenthesis
