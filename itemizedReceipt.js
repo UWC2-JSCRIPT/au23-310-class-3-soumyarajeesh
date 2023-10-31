@@ -4,6 +4,18 @@
 // function should log each item to the console and log a total price
 
 
+const logReceipt = (...items)=>{
+let total=0;
+items.forEach((items) =>{
+  total+= items.price;
+  console.log(items.descr,'- $',items.price);
+})
+console.log('Total - $',total);
+}
+const Burrito = {descr:'Burrito',price:5.99};
+const Chips = {descr:'Chips & Salsa',price:2.99};
+const Sprite = {descr:'Sprite',price:1.99};
+
 
 // Check
 logReceipt(

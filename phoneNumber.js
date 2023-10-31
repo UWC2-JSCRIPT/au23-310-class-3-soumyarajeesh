@@ -4,8 +4,16 @@
 // '206-333-4444'
 // '206 333 4444'
 // Returns true if valid, false if not valid
-
-
+function testPhoneNumber(phoneNumber){
+    var RegExp = /^\(\d{3}\)[-\s]\d{3}[-\s]\d{4}$/;
+    var phone = phoneNumber.match(RegExp);
+    if(phone){
+        return true;
+    }
+    else{
+    return false;
+    }
+    }
 
 // Explanation of RegExp
 // ^      start of line
@@ -30,7 +38,11 @@ console.log(testPhoneNumber('(206) 33-4444')); // should return false, missing a
 // the phone number.
 // Returns an object in the format {areaCode, phoneNumber}
 
+function parsePhoneNumber(phoneNumber){
+var RegExp=/^\(\d{3}\)[-\s]\d{3}[-\s]\d{4}$/;
+var phone=phoneNumber.match(RegExp);
 
+}
 
 // Check parsePhoneNumber
 console.log(parsePhoneNumber('206-333-4444'));
