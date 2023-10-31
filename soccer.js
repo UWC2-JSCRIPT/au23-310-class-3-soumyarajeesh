@@ -51,7 +51,8 @@ console.log(getTotalPoints('wlld')); // should equal 4
 // i.e. {name: 'Sounders', results: 'wwlwdd'}
 // Logs each entry to the console as "Team name: points"
 
-function orderTeams(teams) {
+(function() {        //wrapping the code in an IIFE
+  function orderTeams(teams) {
   for (const team of teams) {
     const totalPoints = getTotalPoints(team.results);
     console.log(`${team.name}: ${totalPoints}`);
@@ -64,4 +65,5 @@ const teams = [team1, team2];
 
 // Check orderTeams
 orderTeams(teams);
+})();
 
