@@ -15,8 +15,8 @@ accelerate() {
 // 2. Call the constructor with a couple ships, 
 // and call accelerate on both of them.
 
-const spaceship1 = new SpaceShip("Discovery:", "Warp 9.5");
-const spaceship2 = new SpaceShip("Challenger:", "Warp 8.0");
+const spaceship1 = new SpaceShip("Discovery:", "Topspeed 9.5");
+const spaceship2 = new SpaceShip("Challenger:", "TopSpeed 8.0");
 
-spaceship1.accelerate(); // Outputs: Discovery: Warp 9.5
-spaceship2.accelerate(); // Outputs: Challenger: Warp 8.0
+spaceship1.accelerate(); // Outputs: Discovery: Topspeed 9.5
+spaceship2.accelerate(); // Outputs: Challenger: Topspeed 8.0
