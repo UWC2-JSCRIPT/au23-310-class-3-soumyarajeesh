@@ -9,24 +9,14 @@ this.name = name;
 this.topSpeed = topSpeed;
 }
 accelerate() {
-    const{name, topSpeed} = this;
-    console.log('${name} ${topSpeed}');
+    console.log(`${this.name} ${this.topSpeed}`);
+  }
 }
-}
-
 // 2. Call the constructor with a couple ships, 
 // and call accelerate on both of them.
-const Endevor = new SpaceShip("Endevor", "1500mph")
-Endevor.accelerate()
 
-const Challenger = new SpaceShip ('Challenger', '1700mph')
-Challenger.accelerate();
+const spaceship1 = new SpaceShip("Discovery:", "Topspeed 9.5");
+const spaceship2 = new SpaceShip("Challenger:", "TopSpeed 8.0");
 
-const Appolo = new SpaceShip ('Appolo', '1300mph')
-Challenger.accelerate();
-
-const Discovery = new SpaceShip ('Discovery', '1900mph')
-Challenger.accelerate();
-
-
-
+spaceship1.accelerate(); // Outputs: Discovery: Topspeed 9.5
+spaceship2.accelerate(); // Outputs: Challenger: Topspeed 8.0

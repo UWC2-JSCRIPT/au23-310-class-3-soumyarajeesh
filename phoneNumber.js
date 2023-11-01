@@ -23,7 +23,6 @@ function testPhoneNumber(phoneNumber) {
     return false;
   }
   
-
 // Explanation of RegExp
 // ^      start of line
 // \(     optional start parenthesis
@@ -49,20 +48,16 @@ console.log(testPhoneNumber('(206) 33-4444')); // should return false, missing a
 // Returns an object in the format {areaCode, phoneNumber}
 
 function parsePhoneNumber(phoneNumber) {
-    // Define a regular expression to match phone numbers in various formats
+   
     const phoneNumberRegex = /^[(]?(\d{3})[)]?[.-]?(\d{3})[.-]?(\d{4})$/;
-    //const phoneNumberRegex = /^\(\d{3}\)[-\s]\d{3}[-\s]\d{4}$/;
-  
-    // Use the exec method to match the regex against the phoneNumber string
+    
     const match = phoneNumber.match(phoneNumberRegex);
   
-    // Check if a match was found
     if (match) {
-      // Extract the area code and phone number from capturing groups
+     
       const areaCode = match[1];
       const phoneNumberPart = match[2] + match[3];
   
-      // Create and return an object with the extracted values
       return {
         areaCode,
         phoneNumber: phoneNumberPart,
