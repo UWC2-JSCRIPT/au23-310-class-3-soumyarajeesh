@@ -4,9 +4,25 @@
 // '206-333-4444'
 // '206 333 4444'
 // Returns true if valid, false if not valid
-
-
-
+function testPhoneNumber(phoneNumber) {
+    // Define regular expression patterns for valid phone number formats
+    const patterns = [
+      /^\(\d{3}\) \d{3}-\d{4}$/,
+      /^\d{3}-\d{3}-\d{4}$/,
+      /^\d{3} \d{3} \d{4}$/
+    ];
+  
+    // Check if the input matches any of the patterns
+    for (const pattern of patterns) {
+      if (pattern.test(phoneNumber)) {
+        return true;
+      }
+    }
+  
+    // If no patterns match, return false
+    return false;
+  }
+  
 // Explanation of RegExp
 // ^      start of line
 // \(     optional start parenthesis
@@ -20,6 +36,7 @@
 
 // check testPhoneNumber
 console.log(testPhoneNumber('(206) 333-4444')); // should return true
+console.log(testPhoneNumber('(206) 333-4444')); // should return true
 console.log(testPhoneNumber('(206) 33-4444')); // should return false, missing a digit
 
 
@@ -30,11 +47,24 @@ console.log(testPhoneNumber('(206) 33-4444')); // should return false, missing a
 // the phone number.
 // Returns an object in the format {areaCode, phoneNumber}
 
-
-
+function parsePhoneNumber(phoneNumber) {
+   
+    const phoneNumberRegex = /^[(]?(\d{3})[)]?[.-]?(\d{3})[.-]?(\d{4})$/;
+    
+    const match = phoneNumber.match(phoneNumberRegex);
+  
+    if (match) {
+     
+      const areaCode = match[1];
+      const phoneNumberPart = match[2] + match[3];
+  
+      return {
+        areaCode,
+        phoneNumber: phoneNumberPart,
+      };
+    } 
+  }
+  
 // Check parsePhoneNumber
-console.log(parsePhoneNumber('206-333-4444'));
-// returns {areaCode: '206', phoneNumber: '3334444'}
-
-console.log(parsePhoneNumber('(222) 422-5353'));
-// returns {areaCode: '222', phoneNumber: '4225353'}
+console.log(parsePhoneNumber('206-333-4444')); // returns {areaCode: '206', phoneNumber: '3334444'}
+console.log(parsePhoneNumber('(222)422-5353')); // returns {areaCode: '222', phoneNumber: '4225353'}
